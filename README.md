@@ -16,6 +16,8 @@
 3. **Retrieval:** The Retriever Agent searches the vector database for relevant content and augments the prompt.
 4. **Response:** The enhanced prompt is sent to the LLM Chat Assistant, which generates a comprehensive answer.
 
+[AI Workflow Chart](docs/AI_workflow.png)
+
 ## Use Case
 
 Can be used as a fully offline personal knowledge repo that can be queried locally by chatting an LLM assistant.
@@ -23,7 +25,7 @@ Can be used as a fully offline personal knowledge repo that can be queried local
 
 ## Getting Started
 
-1. Download and install ollama from [Offlicial Ollama Site](https://ollama.com/download)
+1. Download and install ollama from [Official Ollama Site](https://ollama.com/download)
 2. Download llm model llama3.2 and embedding model mxbai-embed-large by running ```ollama pull llama3.2 && ollama pull mxbai-embed-large```
 3. Install python package manager uv with command```pip install uv``` 
 4. Run in cmd ```uv run app.py```. This will automatically install all depedencies and run the program

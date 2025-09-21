@@ -18,13 +18,15 @@
 
 ## Use Case
 
-1) Can be used as a fully offline personal knowledge repo that can be queried locally through chatting an LLM that can access this knowledge.
+Can be used as a fully offline personal knowledge repo that can be queried locally by chatting an LLM assistant.
 
-2) Can be 
 
 ## Getting Started
 
-Just run in cmd ```uv run main.py```
+1. Download and install ollama from [Offlicial Ollama Site](https://ollama.com/download)
+2. Download llm model llama3.2 and embedding model mxbai-embed-large by running ```ollama pull llama3.2 && ollama pull mxbai-embed-large```
+3. Install python package manager uv with command```pip install uv``` 
+4. Run in cmd ```uv run app.py```. This will automatically install all depedencies and run the program
 
 A dummy source file has already been added to ./knowledge_source_files
 so you can just ask about the info present in the file to the agent.

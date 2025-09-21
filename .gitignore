@@ -1,6 +1,7 @@
 .venv/
 /knowledge_source_files/*
 !/knowledge_source_files/README.MD
+!/knowledge_source_files/fictonal_software_info.txt
 /chroma_vector_db/*
 uv.lock
 *.ipynb

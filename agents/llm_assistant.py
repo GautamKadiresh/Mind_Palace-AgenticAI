@@ -2,16 +2,14 @@ from langchain_ollama.llms import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 
 
-#CONSTANTS
+# CONSTANTS
 from constants import LLM_ASSISTANT, SYSTEM_PROMPT, USER_PROMPT
-
 
 
 model = OllamaLLM(model=LLM_ASSISTANT)
 
 
-
-def llm_assistant(messages, user_query, retrieved_info='No info'):
+def llm_assistant(messages, user_query, retrieved_info="No info"):
     if len(messages) == 0:
         messages = [
             ("system", SYSTEM_PROMPT),
@@ -25,6 +23,7 @@ def llm_assistant(messages, user_query, retrieved_info='No info'):
     result = chain.invoke({})
     messages.append(("assistant", result))
     return messages
+
 
 # print("\n\n-------------------------------")
 # user_query = input("Ask your question (q to quit):\n")

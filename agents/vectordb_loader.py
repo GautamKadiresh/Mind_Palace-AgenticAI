@@ -8,8 +8,9 @@ from pathlib import Path
 from os import listdir
 from os.path import isfile, join
 
-#CONSTANTS
+# CONSTANTS
 from constants import DB_LOCATION, EMBEDDING_MODEL, SRC_FILES_LOCATION, VECTORS_CHUNK_SIZE, VECTOR_OVERLAP_SIZE
+
 
 def document_reader(source_file_path):
     onlyfiles = [join(source_file_path, f) for f in listdir(source_file_path) if isfile(join(source_file_path, f))]
@@ -28,11 +29,12 @@ def document_reader(source_file_path):
         else:
             print(f"Unsupported file format: {ext}")
             continue
-        
+
         document = loader.load()
         all_documents.extend(document)
     print(f"Total documents loaded: {len(all_documents)}")
     return all_documents
+
 
 def vectordb_loader():
     all_documents = document_reader(SRC_FILES_LOCATION)
@@ -41,13 +43,9 @@ def vectordb_loader():
     ids = [str(i) for i in range(len(chunked_documents))]
 
     embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
-    vector_store = Chroma(
-        collection_name="mind_palace",
-        persist_directory=DB_LOCATION,
-        embedding_function=embeddings
-    )
+    vector_store = Chroma(collection_name="mind_palace", persist_directory=DB_LOCATION, embedding_function=embeddings)
 
-    vectorstore_ids = vector_store.get()['ids']
+    vectorstore_ids = vector_store.get()["ids"]
     if len(vectorstore_ids) != 0:
         vector_store.delete(ids=vectorstore_ids)
 

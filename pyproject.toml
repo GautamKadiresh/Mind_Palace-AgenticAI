@@ -1,7 +1,7 @@
 [project]
 name = "mind-palace"
 version = "0.1.0"
-description = "Add your description here"
+description = "RAG based agentic AI. Uploads documents to vectordb and allows to query it through LLM prompts"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -17,5 +17,6 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "black>=25.9.0",
     "ipykernel>=6.30.1",
 ]

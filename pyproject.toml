@@ -1,0 +1,21 @@
+[project]
+name = "mind-palace"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langchain>=0.3.27",
+    "langchain-chroma>=0.2.6",
+    "langchain-community>=0.3.29",
+    "langchain-ollama>=0.3.8",
+    "langgraph>=0.6.7",
+    "pandas>=2.3.2",
+    "typing>=3.10.0.0",
+    "typing-extensions>=4.15.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+]

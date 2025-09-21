@@ -1,0 +1,8 @@
+.venv/
+/knowledge_source_files/*
+!/knowledge_source_files/README.MD
+/chroma_vector_db/*
+uv.lock
+*.ipynb
+/agents/__pycache__/*
+__pycache__/*

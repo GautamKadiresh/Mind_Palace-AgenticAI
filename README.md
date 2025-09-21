@@ -16,7 +16,7 @@
 3. **Retrieval:** The Retriever Agent searches the vector database for relevant content and augments the prompt.
 4. **Response:** The enhanced prompt is sent to the LLM Chat Assistant, which generates a comprehensive answer.
 
-[AI Workflow Chart](docs/AI_workflow.png)
+![AI Workflow Chart](docs/AI_workflow.png)
 
 ## Use Case
 

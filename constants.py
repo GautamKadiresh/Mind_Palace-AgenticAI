@@ -20,9 +20,11 @@ Information from Vector DB:
 
 
 # VECTOR DB CONSTANTS
-DB_LOCATION = ".\chroma_vector_db"
-EMBEDDING_MODEL = "mxbai-embed-large"
-MAX_RESULTS = 1
-SRC_FILES_LOCATION = ".\knowledge_source_files"
-VECTORS_CHUNK_SIZE = 1000
-VECTOR_OVERLAP_SIZE = 200
+VECTOR_DB_CONFIG = {
+    "DB_LOCATION": ".\chroma_vector_db",
+    "EMBEDDING_MODEL": "mxbai-embed-large",
+    "MAX_RESULTS": 1,
+    "SRC_FILES_LOCATION": ".\knowledge_source_files",
+    "VECTORS_CHUNK_SIZE": 1000,
+    "VECTOR_OVERLAP_SIZE": 200,
+}

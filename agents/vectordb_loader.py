@@ -9,7 +9,7 @@ from os import listdir
 from os.path import isfile, join
 
 # CONSTANTS
-from constants import DB_LOCATION, EMBEDDING_MODEL, SRC_FILES_LOCATION, VECTORS_CHUNK_SIZE, VECTOR_OVERLAP_SIZE
+from constants import VECTOR_DB_CONFIG
 
 
 def document_reader(source_file_path):
@@ -37,13 +37,13 @@ def document_reader(source_file_path):
 
 
 def vectordb_loader():
-    all_documents = document_reader(SRC_FILES_LOCATION)
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=VECTORS_CHUNK_SIZE, chunk_overlap=VECTOR_OVERLAP_SIZE)
+    all_documents = document_reader(VECTOR_DB_CONFIG["SRC_FILES_LOCATION"])
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=VECTOR_DB_CONFIG["VECTORS_CHUNK_SIZE"], chunk_overlap=VECTOR_DB_CONFIG["VECTOR_OVERLAP_SIZE"])
     chunked_documents = text_splitter.split_documents(all_documents)
     ids = [str(i) for i in range(len(chunked_documents))]
 
-    embeddings = OllamaEmbeddings(model=EMBEDDING_MODEL)
-    vector_store = Chroma(collection_name="mind_palace", persist_directory=DB_LOCATION, embedding_function=embeddings)
+    embeddings = OllamaEmbeddings(model=VECTOR_DB_CONFIG["EMBEDDING_MODEL"])
+    vector_store = Chroma(collection_name="mind_palace", persist_directory=VECTOR_DB_CONFIG["DB_LOCATION"], embedding_function=embeddings)
 
     vectorstore_ids = vector_store.get()["ids"]
     if len(vectorstore_ids) != 0:

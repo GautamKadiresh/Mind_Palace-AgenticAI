@@ -1,29 +1,40 @@
 [project]
-name = "mind-palace"
+name = "Mind_Palace-AgenticAI"
 version = "0.1.0"
 description = "RAG based agentic AI. Uploads documents to vectordb and allows to query it through LLM prompts"
 readme = "README.md"
-requires-python = ">=3.11"
+authors = [
+    { name = "Gautam Kadiresh", email = "gautamkadiresh@gmail.com" }
+]
+requires-python = ">=3.12"
 dependencies = [
-    "langchain>=0.3.27",
-    "langchain-chroma>=0.2.6",
-    "langchain-community>=0.3.29",
-    "langchain-ollama>=0.3.8",
-    "langgraph>=0.6.7",
-    "pandas>=2.3.2",
+    "langchain>=1.2.0",
+    "langchain-chroma>=1.1.0",
+    "langchain-community>=0.4.1",
+    "langchain-ollama>=1.0.1",
+    "langchain-text-splitters>=1.1.0",
+    "langgraph>=1.0.5",
+    "pandas>=2.3.3",
     "typing>=3.10.0.0",
     "typing-extensions>=4.15.0",
 ]
 
+[project.scripts] 
+mind-palace= "mind_palace_agenticai:main"
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"
+
 [dependency-groups]
 dev = [
-    "black>=25.9.0",
-    "ipykernel>=6.30.1",
+    "black>=25.12.0",
+    "ipykernel>=7.1.0",
 ]
 
 [tool.black]
 line-length = 120
-target-version = ['py311']
+target-version = ['py312']
 force-exclude = '''
 /(
   uv.lock
@@ -31,5 +42,7 @@ force-exclude = '''
   | LICENSE
   | README.md
   | .*ipynb
+  | .gitignore
+  | .*/__pycache__/.*
 )
 '''

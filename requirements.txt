@@ -1,0 +1,9 @@
+langchain
+langchain_text_splitters
+langchain - chroma
+langchain - community
+langchain - ollama
+langgraph
+pandas
+typing
+typing - extensions

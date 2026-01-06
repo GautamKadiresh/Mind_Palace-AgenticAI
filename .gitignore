@@ -1,9 +1,17 @@
-.venv/
-/knowledge_source_files/*
-!/knowledge_source_files/README.MD
-!/knowledge_source_files/fictonal_software_info.txt
+# Python-generated files
+*/__pycache__/
 /chroma_vector_db/*
-uv.lock
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
 *.ipynb
-/agents/__pycache__/*
-__pycache__/*
+
+# Virtual environments
+.venv
+
+# default files
+/knowledge_files/*
+!/knowledge_files/README.MD
+!/knowledge_files/fictional_software_fluxen_core_info.txt
